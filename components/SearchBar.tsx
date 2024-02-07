@@ -27,7 +27,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch, showSuggestions, sugges
         <form onSubmit={handleSubmit} className="w-full max-w-lg mx-auto mt-8">
             <div className="flex items-center border-b border-b-2 border-blue-500 py-2">
                 <input
-                    className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+                    className="appearance-none bg-transparent border-none w-full text-white mr-3 py-1 px-2 leading-tight focus:outline-none"
                     type="text"
                     placeholder="Search Pokémon..."
                     value={searchQuery}

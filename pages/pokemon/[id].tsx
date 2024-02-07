@@ -8,6 +8,7 @@ import PokemonImage from '@/components/PokemonImage';
 import { typeColors } from '@/components/typeColors';
 import PokemonEvolutionChain from '@/components/PokemonEvolutionChain';
 import AttacksSection from '@/components/AttacksSection';
+import Loading from "@/components/Loading";
 
 const PokemonDetailPage: React.FC = () => {
     const router = useRouter();
@@ -17,7 +18,7 @@ const PokemonDetailPage: React.FC = () => {
         variables: { id },
     });
 
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <Loading/>;
     if (error) return <p>Error: {error.message}</p>;
     if (!data || !data.pokemon) return <p>Oops! Try again. The Pokémon you're looking for is a unicorn. It doesn't exist in this list.</p>;
 

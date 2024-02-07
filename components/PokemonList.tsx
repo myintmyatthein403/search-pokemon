@@ -1,5 +1,3 @@
-// components/PokemonList.tsx
-
 import React, { useState } from 'react';
 import PokemonCard from './PokemonCard';
 import SearchBar from "@/components/SearchBar";
@@ -20,14 +18,16 @@ const PokemonList: React.FC<PokemonListProps> = ({ pokemons }) => {
     };
 
     return (
-        <div>
-            <SearchBar onSearch={handleSearch} showSuggestions={false} suggestions={[]} />
+        <div className='w-fit mx-auto bg-gray-900 text-white shadow-md rounded-lg overflow-hidden'>
+            <div className="mt-4 mb-4">
+                <SearchBar onSearch={handleSearch} showSuggestions={false} suggestions={[]} />
+            </div>
             {filteredPokemons.length === 0 ? (
                 <div className="text-center mt-4">
                     <p className="text-gray-500">Oops! Try again. The Pokémon you're looking for is a unicorn. It doesn't exist in this list.</p>
                 </div>
             ) : (
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div className="grid grid-cols-1 gap-4">
                     {filteredPokemons.map((pokemon) => (
                         <PokemonCard key={pokemon.id} pokemon={pokemon} />
                     ))}
